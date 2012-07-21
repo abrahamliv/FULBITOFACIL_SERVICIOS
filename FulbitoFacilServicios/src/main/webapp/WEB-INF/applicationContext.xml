@@ -22,6 +22,10 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <bean id="serviciosAlquilerCanchaImpl" class="upc.iluminados.webservice.ServiciosAlquilerCanchaImpl"/>
     
+    <bean id="serviciosConsultaHisImpl" class="upc.iluminados.webservice.ServiciosConsultaHisImpl"/>
+    
+     <bean id="serviciosRegistrarDuenioImpl" class="upc.iluminados.webservice.ServiciosRegistrarDuenioImpl"/>
+    
     <!-- Declaramos el endpoint de nuestro servicio web, indicando cual es la
          clase de implementación. En el atributo "implementor" podemos escribir
          el nombre completo de la clase implementación, o referenciar a un
@@ -43,7 +47,16 @@ http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	  address="/ServiciosAlquilerCancha" />
 
    
-    
+     <jaxws:endpoint
+	  id="ServiciosConsultaHis"
+	  implementor="#serviciosConsultaHisImpl"
+	  address="/ServiciosConsultaHis" />
+	  
+	   <jaxws:endpoint
+	  id="ServiciosRegistrarDuenio"
+	  implementor="#serviciosRegistrarDuenioImpl"
+	  address="/ServiciosRegistrarDuenio" />
+	  
 
 
 </beans>
