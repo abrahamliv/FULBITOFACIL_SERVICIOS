@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!-- Se importan los recursos de Apache CXF necesarios -->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+
+    <!-- Declaramos el bean implementación del Servicio Web. Como vemos, es
+         un bean más de Spring, por lo que podemos inyectarle dependencias,
+         interceptores, y demás.
+    -->
+    <bean id="serviciosUsuarioImpl" class="upc.iluminados.webservice.ServiciosUsuarioImpl"/>
+
+    <bean id="serviciosBuscarCanchaImpl" class="upc.iluminados.webservice.ServiciosBuscarCanchaImpl"/>
+
+    <bean id="serviciosAlquilerCanchaImpl" class="upc.iluminados.webservice.ServiciosAlquilerCanchaImpl"/>
+    
+    <bean id="serviciosConsultaHisImpl" class="upc.iluminados.webservice.ServiciosConsultaHisImpl"/>
+    
+     <bean id="serviciosRegistrarDuenioImpl" class="upc.iluminados.webservice.ServiciosRegistrarDuenioImpl"/>
+    
+    <!-- Declaramos el endpoint de nuestro servicio web, indicando cual es la
+         clase de implementación. En el atributo "implementor" podemos escribir
+         el nombre completo de la clase implementación, o referenciar a un
+         bean de Spring usando un # seguido del nombre del bean.
+    -->
+    <jaxws:endpoint
+	  id="ServiciosUsuario"
+	  implementor="#serviciosUsuarioImpl" 
+	  address="/ServiciosUsuario" />
+
+    <jaxws:endpoint
+	  id="ServiciosBuscarCancha"
+	  implementor="#serviciosBuscarCanchaImpl"
+	  address="/ServiciosBuscarCancha" />
+
+    <jaxws:endpoint
+	  id="ServiciosAlquilerCancha"
+	  implementor="#serviciosAlquilerCanchaImpl"
+	  address="/ServiciosAlquilerCancha" />
+
+   
+     <jaxws:endpoint
+	  id="ServiciosConsultaHis"
+	  implementor="#serviciosConsultaHisImpl"
+	  address="/ServiciosConsultaHis" />
+	  
+	   <jaxws:endpoint
+	  id="ServiciosRegistrarDuenio"
+	  implementor="#serviciosRegistrarDuenioImpl"
+	  address="/ServiciosRegistrarDuenio" />
+	  
+
+
+</beans>
