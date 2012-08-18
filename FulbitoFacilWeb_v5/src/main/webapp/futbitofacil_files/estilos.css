@@ -1,0 +1,62 @@
+.menu{
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3C370A;
+	text-decoration:none;
+}
+.menu:hover{
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#377107;
+	text-decoration:none;
+}
+.pie{
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#9FB986;
+	text-decoration:none;
+}
+.texto{
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000000;
+	text-decoration:none;
+}
+.titulo{
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#9DBA86;
+	text-decoration:none;
+}
+.linkazul{
+
+	text-decoration:underline;
+}
+.linkazul:hover{
+
+	text-decoration:none;
+}
+.botonformulario {
+	border: 1px solid #9DBA86;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	background-color: #9DBA86;
+	
+}
+.formulario {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px solid #9DBA86;
+
+}
+.textobalitas {font-family: Arial; font-size: 9px; color: #d0d0d0; text-decoration: none; }
+
+A.linkbalitas {
+	font-family: Arial; font-size: 9px; text-decoration: underline; color: #d0d0d0;
+
+
+}
+A.linkbalitas:hover {
+	font-family: Arial; font-size: 9px; text-decoration: none; color: #d0d0d0;
+}

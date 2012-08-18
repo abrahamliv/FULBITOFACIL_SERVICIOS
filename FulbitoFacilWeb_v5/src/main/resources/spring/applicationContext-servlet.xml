@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"> 
+  
+  <bean name="/alquilerCancha.do" class="upc.iluminados.controller.AlquilarCanchaController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+    <bean name="/buscarCancha.do" class="upc.iluminados.controller.BuscarCanchaController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+  <bean name="/registrarCancha.do" class="upc.iluminados.controller.RegistrarCanchaController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+    <bean name="/registrarDuenio.do" class="upc.iluminados.controller.RegistrarDuenioController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+      <bean name="/registrarLocal.do" class="upc.iluminados.controller.RegistrarLocalController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+  <bean name="/consultarHis.do" class="upc.iluminados.controller.ConsultarHisController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+  <bean name="/login.do" class="upc.iluminados.controller.LoginController" >
+    <property name="service" ref="service" />
+  </bean>
+  
+    <bean name="/home.do" class="upc.iluminados.controller.HomeController" >
+  </bean>
+  
+  
+  
+</beans>

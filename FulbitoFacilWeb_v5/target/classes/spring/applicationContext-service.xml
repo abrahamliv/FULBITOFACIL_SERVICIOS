@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+      http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	    <property name="prefix" value="/WEB-INF/jsp/html/" />
+	    <property name="suffix" value=".jsp" />
+	  </bean>
+  
+  <!-- webservice client -->
+  <jaxws:client id="serviciosRegistrarDuenio" 
+          serviceClass="upc.iluminados.ws.ServiciosRegistrarDuenio"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosRegistrarDuenio"/>
+          
+   <jaxws:client id="serviciosAlquilerCancha" 
+          serviceClass="upc.iluminados.ws.ServiciosAlquilerCancha"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosAlquilerCancha"/>
+          
+   <jaxws:client id="serviciosBuscarCancha" 
+          serviceClass="upc.iluminados.ws.ServiciosBuscarCancha"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosBuscarCancha"/>
+          
+   <jaxws:client id="serviciosUsuario" 
+          serviceClass="upc.iluminados.ws.ServiciosUsuario"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosUsuario"/>
+          
+   <jaxws:client id="serviciosRegistrarCancha" 
+          serviceClass="upc.iluminados.ws.ServiciosRegistrarCancha"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosRegistrarCancha"/>
+          
+           <jaxws:client id="serviciosRegistrarLocal" 
+          serviceClass="upc.iluminados.ws.ServiciosRegistrarLocal"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosRegistrarLocal"/>
+          
+          
+  <jaxws:client id="serviciosConsultarHis" 
+          serviceClass="upc.iluminados.ws.ServiciosConsultarHis"
+          address="http://localhost:8085/FulbitoFacilServicios/ServiciosConsultarHis"/>        
+          
+          
+          
+    <!-- Service que se encargara de realizar las llamadas a los servicios web y mapear
+      los datos necesarios para la aplicacion -->
+  <bean id="service" class="upc.iluminados.service.ServiceImpl" >
+    <property name="serviciosRegistrarDuenio" ref="serviciosRegistrarDuenio" />
+    <property name="serviciosAlquilerCancha" ref="serviciosAlquilerCancha" />
+    <property name="serviciosBuscarCancha" ref="serviciosBuscarCancha" />
+    <property name="serviciosUsuario" ref="serviciosUsuario" />
+    <property name="serviciosRegistrarCancha" ref="serviciosRegistrarCancha" />
+    <property name="serviciosRegistrarLocal" ref="serviciosRegistrarLocal" />
+    <property name="serviciosConsultarHis" ref="serviciosConsultarHis" />
+  </bean>
+  
+
+</beans>
