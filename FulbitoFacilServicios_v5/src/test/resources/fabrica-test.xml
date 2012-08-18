@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!-- Este bean será el cliente del Web Service. Apache CXF generará un
+         cliente que cumpla con la interfaz indicada y que accede al
+         Web Service indicado en el atributo "address". Este bean luego
+         puede inyectarse y utilizarse normalmente como cualquier otro objeto.
+    -->
+    
+    
+    <jaxws:client id="clienteServiciosBuscarCancha" serviceClass="upc.iluminados.webservice.ServiciosBuscarCancha" 
+    			address="http://localhost:8085/FulbitoFacilServicios/ServiciosBuscarCancha" />
+    			
+    			
+    			  
+          
+
+
+</beans>
